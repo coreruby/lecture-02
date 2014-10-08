@@ -266,3 +266,60 @@ section
 section.center data-background="#000"
   blockquote.white With powerful operators come messy semantics.
   p.white Benjamin Franklin
+
+section
+  h2 Method
+  p Can yield a block
+  pre: code.ruby
+    '
+      def log(level)
+        if level > 0
+          message = yield
+          puts message
+        end
+      end
+
+      >> log(1) { 'FIRE!' }
+      FIRE!
+      => nil
+
+      >> log(0) { 'Wha?' }
+      => nil
+
+section
+  h2 Method
+  p Can yield a block
+  pre: code.ruby
+    '
+      def log(level)
+        if level > 0
+          message = yield
+          puts message
+        end
+      end
+
+      >> log(1) { 'FIRE!' }
+      FIRE!
+      => nil
+
+      >> log(0) { 'Wha?' }
+      => nil
+
+section
+  h2 Method
+  p Can ask if a block is given
+  pre: code.ruby
+    '
+      def log(level, message = nil)
+        if level > 0
+          puts block_given? ? yield : message
+        end
+      end
+
+      >> log(1) { 'FIRE!' }
+      FIRE!
+      => nil
+
+      >> log(1, 'FIRE!')
+      FIRE!
+      => nil

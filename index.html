@@ -366,6 +366,69 @@ end
     Benjamin Franklin
   </p>
 </section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Can yield a block
+  </p>
+  <pre><code class="ruby">def log(level)
+  if level > 0
+    message = yield
+    puts message
+  end
+end
+
+>> log(1) { 'FIRE!' }
+FIRE!
+=> nil
+
+>> log(0) { 'Wha?' }
+=> nil </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Can yield a block
+  </p>
+  <pre><code class="ruby">def log(level)
+  if level > 0
+    message = yield
+    puts message
+  end
+end
+
+>> log(1) { 'FIRE!' }
+FIRE!
+=> nil
+
+>> log(0) { 'Wha?' }
+=> nil </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Can ask if a block is given
+  </p>
+  <pre><code class="ruby">def log(level, message = nil)
+  if level > 0
+    puts block_given? ? yield : message
+  end
+end
+
+>> log(1) { 'FIRE!' }
+FIRE!
+=> nil
+
+>> log(1, 'FIRE!')
+FIRE!
+=> nil </code></pre>
+</section>
       </div>
     </div>
     <script src="js/head.min.js"></script>
