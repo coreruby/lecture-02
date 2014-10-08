@@ -371,6 +371,34 @@ end
     Method
   </h2>
   <p>
+    Can provide default values for arguments
+  </p>
+  <pre><code class="ruby">def eat(meal = :bread)
+  nom meal
+end
+
+>> eat
+=> :bread
+
+>> eat :salad
+=> :salad </code></pre>
+</section>
+<section class="center" data-background="#000">
+  <blockquote class="white">The default arguments suffer the same splat heart ache.</blockquote>
+  <p class="white">
+    Marvin Gaye
+  </p>
+</section>
+<section class="center" data-background="#000">
+  <p class="white">
+    Either default the last argument or don't default at all.
+  </p>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
     Can yield a block
   </p>
   <pre><code class="ruby">def log(level)

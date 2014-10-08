@@ -269,6 +269,28 @@ section.center data-background="#000"
 
 section
   h2 Method
+  p Can provide default values for arguments
+  pre: code.ruby
+    '
+      def eat(meal = :bread)
+        nom meal
+      end
+
+      >> eat
+      => :bread
+
+      >> eat :salad
+      => :salad
+
+section.center data-background="#000"
+  blockquote.white The default arguments suffer the same splat heart ache.
+  p.white Marvin Gaye
+
+section.center data-background="#000"
+  p.white Either default the last argument or don't default at all.
+
+section
+  h2 Method
   p Can yield a block
   pre: code.ruby
     '
