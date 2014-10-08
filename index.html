@@ -122,6 +122,36 @@ end </code></pre>
     Method
   </h2>
   <p>
+    Can hold local variables
+  </p>
+  <pre><code class="ruby">def just_hanging_around_creating_local_variables
+  a_local_variable = 42
+end
+
+>> just_hanging_around_creating_local_variables
+=> 42 </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Local variables aren't visible outside the method
+  </p>
+  <pre><code class="ruby">def just_hanging_around_creating_local_variables
+  a_local_variable = 42
+end
+
+>> just_hanging_around_creating_local_variables
+=> 42
+>> a_local_variable
+NameError: undefined local variable or method `a_local_variable' for main:Object </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
     Returns a value
   </p>
   <pre><code class="ruby">def eat(food)

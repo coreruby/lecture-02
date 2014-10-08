@@ -58,6 +58,32 @@ section
 
 section
   h2 Method
+  p Can hold local variables
+  pre: code.ruby
+    '
+      def just_hanging_around_creating_local_variables
+        a_local_variable = 42
+      end
+
+      >> just_hanging_around_creating_local_variables
+      => 42
+
+section
+  h2 Method
+  p Local variables aren't visible outside the method
+  pre: code.ruby
+    '
+      def just_hanging_around_creating_local_variables
+        a_local_variable = 42
+      end
+
+      >> just_hanging_around_creating_local_variables
+      => 42
+      >> a_local_variable
+      NameError: undefined local variable or method `a_local_variable' for main:Object
+
+section
+  h2 Method
   p Returns a value
   pre: code.ruby
     '
