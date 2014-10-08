@@ -391,7 +391,7 @@ end
 </section>
 <section class="center" data-background="#000">
   <p class="white">
-    Either default the last argument or don't default at all.
+    Either default the last argument or don't default at all
   </p>
 </section>
 <section>
@@ -458,6 +458,65 @@ FIRE!
 >> log(1, 'FIRE!')
 FIRE!
 => nil </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Can yield arguments into a block
+  </p>
+  <pre><code class="ruby">def create(klass)
+  yield klass.new
+end
+
+>> create Array do |a|
+..   a << 42
+..   a.include? 42
+.. end
+=> true </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Can yield many arguments into a block
+  </p>
+  <pre><code class="ruby">def create(*classes)
+  yield classes.map(&:new)
+end
+
+>> create Array, Hash do |array, hash|
+..   puts array.class, hash.class
+.. end
+Array
+Hash
+=> true </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Can yield many arguments into a block
+  </p>
+  <pre><code class="ruby">def create(*classes)
+  yield classes.map(&:new)
+end
+
+>> create Array, Hash do |array, hash|
+..   puts array.class, hash.class
+.. end
+Array
+Hash
+=> true
+
+>> create Array, Hash do |array|
+..   puts array.class
+.. end
+Array
+=> true </code></pre>
 </section>
       </div>
     </div>

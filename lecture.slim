@@ -287,7 +287,7 @@ section.center data-background="#000"
   p.white Marvin Gaye
 
 section.center data-background="#000"
-  p.white Either default the last argument or don't default at all.
+  p.white Either default the last argument or don't default at all
 
 section
   h2 Method
@@ -347,3 +347,56 @@ section
       >> log(1, 'FIRE!')
       FIRE!
       => nil
+
+section
+  h2 Method
+  p Can yield arguments into a block
+  pre: code.ruby
+    '
+      def create(klass)
+        yield klass.new
+      end
+
+      >> create Array do |a|
+      ..   a << 42
+      ..   a.include? 42
+      .. end
+      => true
+
+section
+  h2 Method
+  p Can yield many arguments into a block
+  pre: code.ruby
+    '
+      def create(*classes)
+        yield classes.map(&:new)
+      end
+
+      >> create Array, Hash do |array, hash|
+      ..   puts array.class, hash.class
+      .. end
+      Array
+      Hash
+      => true
+
+section
+  h2 Method
+  p Can yield many arguments into a block
+  pre: code.ruby
+    '
+      def create(*classes)
+        yield classes.map(&:new)
+      end
+
+      >> create Array, Hash do |array, hash|
+      ..   puts array.class, hash.class
+      .. end
+      Array
+      Hash
+      => true
+
+      >> create Array, Hash do |array|
+      ..   puts array.class
+      .. end
+      Array
+      => true
