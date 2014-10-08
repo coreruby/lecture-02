@@ -43,3 +43,52 @@ section
 section
   h2 Prelude
   p Send a pull request for everything
+
+section.center data-background="#000"
+  p: img.inline src="https://avatars1.githubusercontent.com/u/8987550?v=2&s=256"
+
+section
+  h2 Method
+  p Defined by the keyword def
+  pre: code.ruby
+    '
+      def eat(food)
+        3.times { nom }
+      end
+
+section
+  h2 Method
+  p Returns a value
+  pre: code.ruby
+    '
+      def eat(food)
+        3.times { nom }
+        return :delicious
+      end
+
+      >> eat(:stake)
+      => :delicious
+
+section
+  h2 Method
+  p Returns a value implicitly
+  pre: code.ruby
+    '
+      def eat(food)
+        3.times { nom }
+        :delicious
+      end
+
+      >> eat(:stake)
+      => :delicious
+
+section
+  h2 Method
+  p Always returns a value
+  pre: code.ruby
+    '
+      def nothing
+      end
+
+      >> nothing
+      => nil

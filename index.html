@@ -11,97 +11,155 @@
   </head>
   <body>
     <div class="reveal">
-      <div class="slides">
-        <section class="center" data-background="#000">
-          <h1 class="white">
-            Methods & Standard Types
-          </h1>
-        </section>
-        <section>
-          <h2>
-            Prelude
-          </h2>
-          <p>
-            We have a facebook group!
-          </p>
-        </section>
-        <section>
-          <h2>
-            Prelude
-          </h2>
-          <p>
-            Which is really funny, cause I ain't got one
-          </p>
-        </section>
-        <section class="center">
-          <img class="inline" src="img/troll.png" />
-        </section>
-        <section>
-          <h2>
-            Prelude
-          </h2>
-          <p>
-            The class has a website
-          </p>
-          <p>
-            <a href="http://coreruby.github.io">http://coreruby.github.io</a>
-          </p>
-        </section>
-        <section>
-          <h2>
-            Prelude
-          </h2>
-          <p>
-            The first lecture is already online
-          </p>
-          <ul>
-            <li>
-              <a href="http://coreruby.github.io/lecture-01">http://coreruby.github.io/lecture-01</a>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>
-            Prelude
-          </h2>
-          <p>
-            The website and the lectures are open source
-          </p>
-          <ul>
-            <li>
-              <a href="https://github.com/coreruby">https://github.com/coreruby</a>
-            </li>
-          </ul>
-        </section>
-        <section class="center">
-          <p>
-            I need your help
-          </p>
-        </section>
-        <section>
-          <h2>
-            Prelude
-          </h2>
-          <p>
-            Send a pull request for a typo
-          </p>
-        </section>
-        <section>
-          <h2>
-            Prelude
-          </h2>
-          <p>
-            Send a pull request for a better explanation
-          </p>
-        </section>
-        <section>
-          <h2>
-            Prelude
-          </h2>
-          <p>
-            Send a pull request for everything
-          </p>
-        </section>
+      <div class="slides"><section class="center" data-background="#000">
+  <h1 class="white">
+    Methods & Standard Types
+  </h1>
+</section>
+<section>
+  <h2>
+    Prelude
+  </h2>
+  <p>
+    We have a facebook group!
+  </p>
+</section>
+<section>
+  <h2>
+    Prelude
+  </h2>
+  <p>
+    Which is really funny, cause I ain't got one
+  </p>
+</section>
+<section class="center">
+  <img class="inline" src="img/troll.png" />
+</section>
+<section>
+  <h2>
+    Prelude
+  </h2>
+  <p>
+    The class has a website
+  </p>
+  <p>
+    <a href="http://coreruby.github.io">http://coreruby.github.io</a>
+  </p>
+</section>
+<section>
+  <h2>
+    Prelude
+  </h2>
+  <p>
+    The first lecture is already online
+  </p>
+  <ul>
+    <li>
+      <a href="http://coreruby.github.io/lecture-01">http://coreruby.github.io/lecture-01</a>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>
+    Prelude
+  </h2>
+  <p>
+    The website and the lectures are open source
+  </p>
+  <ul>
+    <li>
+      <a href="https://github.com/coreruby">https://github.com/coreruby</a>
+    </li>
+  </ul>
+</section>
+<section class="center">
+  <p>
+    I need your help
+  </p>
+</section>
+<section>
+  <h2>
+    Prelude
+  </h2>
+  <p>
+    Send a pull request for a typo
+  </p>
+</section>
+<section>
+  <h2>
+    Prelude
+  </h2>
+  <p>
+    Send a pull request for a better explanation
+  </p>
+</section>
+<section>
+  <h2>
+    Prelude
+  </h2>
+  <p>
+    Send a pull request for everything
+  </p>
+</section>
+<section class="center" data-background="#000">
+  <p>
+    <img class="inline" src="https://avatars1.githubusercontent.com/u/8987550?v=2&amp;s=256" />
+  </p>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Defined by the keyword def
+  </p>
+  <pre><code class="ruby">def eat(food)
+  3.times { nom }
+end </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Returns a value
+  </p>
+  <pre><code class="ruby">def eat(food)
+  3.times { nom }
+  return :delicious
+end
+
+>> eat(:stake)
+=> :delicious </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Returns a value implicitly
+  </p>
+  <pre><code class="ruby">def eat(food)
+  3.times { nom }
+  :delicious
+end
+
+>> eat(:stake)
+=> :delicious </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Always returns a value
+  </p>
+  <pre><code class="ruby">def nothing
+end
+
+>> nothing
+=> nil </code></pre>
+</section>
       </div>
     </div>
     <script src="js/head.min.js"></script>
