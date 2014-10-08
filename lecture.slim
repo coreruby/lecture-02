@@ -71,6 +71,21 @@ section
 
 section
   h2 Method
+  p Returns a value early
+  pre: code.ruby
+    '
+      def eat(food)
+        return :oh_well if food == :potato
+
+        3.times { nom }
+        return :delicious
+      end
+
+      >> eat(:stake)
+      => :delicious
+
+section
+  h2 Method
   p Returns a value implicitly
   pre: code.ruby
     '
@@ -85,6 +100,17 @@ section
 section
   h2 Method
   p Always returns a value
+  pre: code.ruby
+    '
+      def nothing
+      end
+
+      >> nothing
+      => nil
+
+section
+  h2 Method
+  p Takes input in the form of arguments
   pre: code.ruby
     '
       def nothing

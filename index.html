@@ -137,6 +137,23 @@ end
     Method
   </h2>
   <p>
+    Returns a value early
+  </p>
+  <pre><code class="ruby">def eat(food)
+  return :oh_well if food == :potato
+
+  3.times { nom }
+  return :delicious
+end
+
+>> eat(:stake)
+=> :delicious </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
     Returns a value implicitly
   </p>
   <pre><code class="ruby">def eat(food)
@@ -153,6 +170,19 @@ end
   </h2>
   <p>
     Always returns a value
+  </p>
+  <pre><code class="ruby">def nothing
+end
+
+>> nothing
+=> nil </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Takes input in the form of arguments
   </p>
   <pre><code class="ruby">def nothing
 end
