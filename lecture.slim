@@ -113,23 +113,24 @@ section
   p Can take no arguments
   pre: code.ruby
     '
-      def shout
-        breath_heavily
-        open_mouth
+      def make_some_noise
+        scream
+        shout
         let_it_all_out
       end
 
-      # It sounds like a cheesy pop song :)
+      >> make_some_noise
+      => :it_sounds_like_a_cheesy_pop_song_broski
 
 section
   h2 Method
   p Can take many arguments
   pre: code.ruby
     '
-      def eat(meal1, meal2, meal3)
-        nom meal1
-        nom meal2
-        nom meal3
+      def eat(first, second, third)
+        nom first
+        nom second
+        nom third
       end
 
 section
@@ -141,14 +142,127 @@ section
         meals.each { |meal| nom meal }
       end
 
-section data-background="#000"
-  h2.white Splat
-  p The name comes from the squashed-big appearance on many early line printers
+      >> eat(:breakfast, :lunch, :dunner)
+      => [:breakfast, :lunch, :dinner]
 
-section data-background="#000"
-  h2.white Splat
-  p True story
+      >> eat(:breakfast)
+      => [:breakfast,]
 
-section data-background="#000"
-  h2.white Splat
-  p Глей с'я ко стаа
+section
+  h2 Method
+  p meals is an Array of the given arguments
+  pre: code.ruby
+    '
+      def eat(*meals)
+        meals.each { |meal| nom meal }
+      end
+
+      >> eat(:breakfast, :lunch, :dunner)
+      => [:breakfast, :lunch, :dinner]
+
+      >> eat(:breakfast)
+      => [:breakfast,]
+
+section.center data-background="#000"
+  p.white The name comes from the squashed-bug appearance on many early line printers
+
+section.center data-background="#000"
+  p.white True story
+
+section.center data-background="#000"
+  p.white Глей с'я ко стаа
+
+section.center data-background="#000"
+  p.white БРАТ
+
+section
+  h2 Method
+  p The splat operator can get a little weird
+  pre: code.ruby
+    '
+      def eat(first, *rest)
+        nom first
+        rest.each { |meal| nom meal }
+      end
+
+section
+  h2 Method
+  p Well, that's not so weird
+  pre: code.ruby
+    '
+      def eat(first, *rest)
+        nom first
+        rest.each { |meal| nom meal }
+      end
+
+      >> eat(:breakfast)
+      => [:breakfast]
+
+      >> eat(:breakfast, :lunch)
+      => [:breakfast, :lunch]
+
+section
+  h2 Method
+  p Well, look at this
+  pre.fragment: code.ruby
+    '
+      def eat(*everything_but, the_last_one)
+        everything_but.each { |meal| nom meal }
+        squash_with_your_face the_last_one
+      end
+
+      >> eat(:potatos, :chicken, :meatballs, :ice_cream)
+      => 0xDEADBEEF
+
+      >> eat(:кифтета)
+      => 0xDEADBEEF
+
+section
+  h2 Method
+  p Not so weird?
+  pre: code.ruby
+    '
+      def eat(*everything_but, the_last_one)
+        everything_but.each { |meal| nom meal }
+        squash_with_your_face the_last_one
+      end
+
+      >> eat(:potatos, :chicken, :meatballs, :ice_cream)
+      => 0xDEADBEEF
+
+      >> eat(:кифтета)
+      => 0xDEADBEEF
+
+section
+  h2 Method
+  p Okay, okay, okay
+  pre: code.ruby
+    '
+      def eat(*everything_but, the_last_one)
+        everything_but.each { |meal| nom meal }
+        squash_with_your_face the_last_one
+      end
+
+      >> eat(:potatos, :chicken, :meatballs, :ice_cream)
+      => 0xDEADBEEF
+
+      >> eat(:кифтета)
+      => 0xDEADBEEF
+
+section
+  h2 Method
+  p You asked for it
+  pre: code.ruby
+    '
+      def eat(first, *in_between, last)
+        gently_taste first
+        in_between.each { |meal| nom meal }
+        squash_with_your_face last
+      end
+
+      >> eat(:potatos, :ice_crebm)
+      => ???
+
+section.center data-background="#000"
+  blockquote.white With powerful operators come messy semantics.
+  p.white Benjamin Franklin

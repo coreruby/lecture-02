@@ -184,13 +184,14 @@ end
   <p>
     Can take no arguments
   </p>
-  <pre><code class="ruby">def shout
-  breath_heavily
-  open_mouth
+  <pre><code class="ruby">def make_some_noise
+  scream
+  shout
   let_it_all_out
 end
 
-# It sounds like a cheesy pop song :) </code></pre>
+>> make_some_noise
+=> :it_sounds_like_a_cheesy_pop_song_broski </code></pre>
 </section>
 <section>
   <h2>
@@ -199,10 +200,10 @@ end
   <p>
     Can take many arguments
   </p>
-  <pre><code class="ruby">def eat(meal1, meal2, meal3)
-  nom meal1
-  nom meal2
-  nom meal3
+  <pre><code class="ruby">def eat(first, second, third)
+  nom first
+  nom second
+  nom third
 end </code></pre>
 </section>
 <section>
@@ -214,30 +215,155 @@ end </code></pre>
   </p>
   <pre><code class="ruby">def eat(*meals)
   meals.each { |meal| nom meal }
-end </code></pre>
+end
+
+>> eat(:breakfast, :lunch, :dunner)
+=> [:breakfast, :lunch, :dinner]
+
+>> eat(:breakfast)
+=> [:breakfast,] </code></pre>
 </section>
-<section data-background="#000">
-  <h2 class="white">
-    Splat
+<section>
+  <h2>
+    Method
   </h2>
   <p>
-    The name comes from the squashed-big appearance on many early line printers
+    meals is an Array of the given arguments
+  </p>
+  <pre><code class="ruby">def eat(*meals)
+  meals.each { |meal| nom meal }
+end
+
+>> eat(:breakfast, :lunch, :dunner)
+=> [:breakfast, :lunch, :dinner]
+
+>> eat(:breakfast)
+=> [:breakfast,] </code></pre>
+</section>
+<section class="center" data-background="#000">
+  <p class="white">
+    The name comes from the squashed-bug appearance on many early line printers
   </p>
 </section>
-<section data-background="#000">
-  <h2 class="white">
-    Splat
-  </h2>
-  <p>
+<section class="center" data-background="#000">
+  <p class="white">
     True story
   </p>
 </section>
-<section data-background="#000">
-  <h2 class="white">
-    Splat
+<section class="center" data-background="#000">
+  <p class="white">
+    Глей с'я ко стаа
+  </p>
+</section>
+<section class="center" data-background="#000">
+  <p class="white">
+    БРАТ
+  </p>
+</section>
+<section>
+  <h2>
+    Method
   </h2>
   <p>
-    Глей с'я ко стаа
+    The splat operator can get a little weird
+  </p>
+  <pre><code class="ruby">def eat(first, *rest)
+  nom first
+  rest.each { |meal| nom meal }
+end </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Well, that's not so weird
+  </p>
+  <pre><code class="ruby">def eat(first, *rest)
+  nom first
+  rest.each { |meal| nom meal }
+end
+
+>> eat(:breakfast)
+=> [:breakfast]
+
+>> eat(:breakfast, :lunch)
+=> [:breakfast, :lunch] </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Well, look at this
+  </p>
+  <pre class="fragment"><code class="ruby">def eat(*everything_but, the_last_one)
+  everything_but.each { |meal| nom meal }
+  squash_with_your_face the_last_one
+end
+
+>> eat(:potatos, :chicken, :meatballs, :ice_cream)
+=> 0xDEADBEEF
+
+>> eat(:кифтета)
+=> 0xDEADBEEF </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Not so weird?
+  </p>
+  <pre><code class="ruby">def eat(*everything_but, the_last_one)
+  everything_but.each { |meal| nom meal }
+  squash_with_your_face the_last_one
+end
+
+>> eat(:potatos, :chicken, :meatballs, :ice_cream)
+=> 0xDEADBEEF
+
+>> eat(:кифтета)
+=> 0xDEADBEEF </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Okay, okay, okay
+  </p>
+  <pre><code class="ruby">def eat(*everything_but, the_last_one)
+  everything_but.each { |meal| nom meal }
+  squash_with_your_face the_last_one
+end
+
+>> eat(:potatos, :chicken, :meatballs, :ice_cream)
+=> 0xDEADBEEF
+
+>> eat(:кифтета)
+=> 0xDEADBEEF </code></pre>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    You asked for it
+  </p>
+  <pre><code class="ruby">def eat(first, *in_between, last)
+  gently_taste first
+  in_between.each { |meal| nom meal }
+  squash_with_your_face last
+end
+
+>> eat(:potatos, :ice_crebm)
+=> ??? </code></pre>
+</section>
+<section class="center" data-background="#000">
+  <blockquote class="white">With powerful operators come messy semantics.</blockquote>
+  <p class="white">
+    Benjamin Franklin
   </p>
 </section>
       </div>
