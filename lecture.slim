@@ -451,3 +451,56 @@ section
       .. end
       Array
       => true
+
+section
+  h2 Proc
+  p Block are an instance of the class Proc
+  pre: code.ruby
+    '
+      def create_block(&new_block)
+        new_block.class
+      end
+
+      >> create_block { nil }.class
+      => Proc
+
+section
+  h2 Proc
+  p Can be created manually
+  pre: code.ruby
+    '
+      p = proc { |*args| nil }
+
+      >> p.call
+      => nil
+
+section
+  h2 Proc
+  p Can be created manually
+  pre: code.ruby
+    '
+      p = proc do |*args|
+        nil
+      end
+
+      >> p.call
+      => nil
+
+section
+  h2 Proc
+  p Can be called with #call #[] and #.()
+  pre: code.ruby
+    '
+      p = proc { |*args| nil }
+
+      >> p.call
+      => nil
+
+      >> p[]
+      => nil
+
+      >> p.()
+      => nil
+
+section.center data-background="#000"
+  p.white #call

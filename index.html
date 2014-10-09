@@ -577,6 +577,69 @@ Hash
 Array
 => true </code></pre>
 </section>
+<section>
+  <h2>
+    Proc
+  </h2>
+  <p>
+    Block are an instance of the class Proc
+  </p>
+  <pre><code class="ruby">def create_block(&new_block)
+  new_block.class
+end
+
+>> create_block { nil }.class
+=> Proc </code></pre>
+</section>
+<section>
+  <h2>
+    Proc
+  </h2>
+  <p>
+    Can be created manually
+  </p>
+  <pre><code class="ruby">p = proc { |*args| nil }
+
+>> p.call
+=> nil </code></pre>
+</section>
+<section>
+  <h2>
+    Proc
+  </h2>
+  <p>
+    Can be created manually
+  </p>
+  <pre><code class="ruby">p = proc do |*args|
+  nil
+end
+
+>> p.call
+=> nil </code></pre>
+</section>
+<section>
+  <h2>
+    Proc
+  </h2>
+  <p>
+    Can be called with #call #[] and #.()
+  </p>
+  <pre><code class="ruby">p = proc { |*args| nil }
+
+>> p.call
+=> nil
+
+>> p[]
+=> nil
+
+>> p.()
+=> nil </code></pre>
+</section>
+<section class="center" data-background="#000">
+  <p class="white">
+    #call
+  </p>
+</section>
       </div>
     </div>
     <script src="js/head.min.js"></script>
