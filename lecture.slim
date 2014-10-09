@@ -426,3 +426,28 @@ section
       .. end
       Array
       => true
+
+section.center data-background="#000"
+  p.white Everything in Ruby is an object
+
+section
+  h2 Method
+  p Can yield many arguments into a block
+  pre: code.ruby
+    '
+      def create(*classes, &block)
+        block.call(*classes.map(&:new))
+      end
+
+      >> create Array, Hash do |array, hash|
+      ..   puts array.class, hash.class
+      .. end
+      Array
+      Hash
+      => true
+
+      >> create Array, Hash do |array|
+      ..   puts array.class
+      .. end
+      Array
+      => true

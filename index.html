@@ -548,6 +548,35 @@ Hash
 Array
 => true </code></pre>
 </section>
+<section class="center" data-background="#000">
+  <p class="white">
+    Everything in Ruby is an object
+  </p>
+</section>
+<section>
+  <h2>
+    Method
+  </h2>
+  <p>
+    Can yield many arguments into a block
+  </p>
+  <pre><code class="ruby">def create(*classes, &block)
+  block.call(*classes.map(&:new))
+end
+
+>> create Array, Hash do |array, hash|
+..   puts array.class, hash.class
+.. end
+Array
+Hash
+=> true
+
+>> create Array, Hash do |array|
+..   puts array.class
+.. end
+Array
+=> true </code></pre>
+</section>
       </div>
     </div>
     <script src="js/head.min.js"></script>
