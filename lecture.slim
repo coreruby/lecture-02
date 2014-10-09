@@ -504,3 +504,69 @@ section
 
 section.center data-background="#000"
   p.white #call
+
+section
+  h2 Proc#lambda?
+  p There is a special proc called lambda
+
+section
+  h2 Proc#lambda?
+  p There is a special proc called lambda
+  pre: code.ruby
+    '
+      callable = lambda { |arg| arg }
+
+      >> callable.call(arg)
+      => nil
+
+section
+  h2 Proc#lambda?
+  p There is a special proc called lambda
+  pre: code.ruby
+    '
+      callable = -> arg { arg }
+
+      >> callable.call(arg)
+      => nil
+
+section
+  h2 Proc#lambda?
+  p There is a special proc called lambda
+  pre: code.ruby
+    '
+      callable = -> (arg) { arg }
+
+      >> callable.call(arg)
+      => nil
+
+section.center data-background="#000"
+  blockquote.white Semantics are important.
+  p.white Goran Bregovic
+
+section
+  h2 Proc#lambda?
+  pre: code.ruby
+    '
+      >> p = proc { |a, b, c| p a, b, c }
+      => #<Proc:0x007fd891a9ff30@(irb):6>
+      >> p.call 1
+      1
+      nil
+      nil
+      => [1, nil, nil]
+      >> l = lambda { |a, b, c| p a, b, c }
+      => #<Proc:0x007fd891a86238@(irb):8 (lambda)>
+      >> l.call 1
+      ArgumentError: wrong number of arguments (1 for 3)
+
+section.center data-background="#000"
+  p.white Next stop
+
+section.center data-background="#000"
+  p.white Functional programming and Enumerable
+
+section.center data-background="#000"
+  p.white Enumerable#what
+
+section.center data-background="#000"
+  p.white PATIENCE YOU MUST HAVE my young padawan
